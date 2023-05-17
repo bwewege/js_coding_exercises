@@ -7,26 +7,23 @@
 export function capitalize(word) {
 	if (word === undefined) throw new Error('word is required');
 	
-	const capitalised = word.charAt(0).toUpperCase() + word.slice(1)
+    const trimSpaces = word.trim();
+ 	const capitalised = trimSpaces.charAt(0).toUpperCase() + trimSpaces.slice(1)
 
-	return(capitalised)
+ 	return(capitalised)
 
-	// NTS - Can add checks to see if any leading spaces, first char is a number.
-		
 }
 
 export function generateInitials(firstName, lastName) {
 	if (firstName === undefined) throw new Error('firstName is required');
 	if (lastName === undefined) throw new Error('lastName is required');
 	// Add your code here!
-	//const firstInitial = firstName.charAt(0)
-	//const lastInitial = lastName.charAt(0)
-	//const upperFirst = firstName.charAt(0).toUpperCase()
-	//const upperLast = lastName.charAt(0).toUpperCase()
-	
+		
 	const initials = firstName.charAt(0).toUpperCase() + "." + lastName.charAt(0).toUpperCase()
 	
 	return(initials)
+
+	// NTS - Can add checks for leading and trailing spaces, numbers, and also apostraphes like O'Brien
 
 }
 

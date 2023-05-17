@@ -11,7 +11,7 @@ import {
   simpleFizzBuzz,
 } from "../challenges/exercise001";
 
-xdescribe("capitalize", () => {
+describe("capitalize", () => {
   test("returns a capitalized string", () => {
     expect(capitalize("hello")).toBe("Hello");
     expect(capitalize("the quick fox")).toBe("The quick fox");
@@ -23,7 +23,7 @@ xdescribe("capitalize", () => {
   });
 });
 
-describe("generateInitials", () => {
+xdescribe("generateInitials", () => {
   test("returns the initials of a firstname and surname", () => {
     expect(generateInitials("Frederic", "Bonneville")).toBe("F.B");
   });
