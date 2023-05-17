@@ -2,23 +2,27 @@
 
 
 
- function capitalize(word) {
- 	if (word === undefined) throw new Error('word is required');
-	
-    const trimSpaces = word.trim();
- 	const capitalised = trimSpaces.charAt(0).toUpperCase() + trimSpaces.slice(1)
-
- 	return(capitalised)
-
- 	// NTS - Can add checks to see if any leading spaces, first char is a number.
+function generateInitials(firstName, lastName) {
+	if (firstName === undefined) throw new Error('firstName is required');
+	if (lastName === undefined) throw new Error('lastName is required');
+	// Add your code here!
 		
- }
+	const initials = firstName.trim().charAt(0).toUpperCase() + "." + lastName.trim().charAt(0).toUpperCase()
+	
+	return(initials)
+
+	// NTS - Can add checks for leading and trailing spaces, numbers, and also apostraphes like O'Brien
+
+}
 
 
-console.log(capitalize("keith is a genius"));
+console.log(generateInitials("keith", "wewege"));
+console.log(generateInitials("Brian", "wewege"));
+console.log(generateInitials("julia", "Wewege"));
+console.log(generateInitials("nathan john", "wewege"));
+console.log(generateInitials(" julia", " wewege"));
+console.log(generateInitials("123bbgun", "wewege"));
+console.log(generateInitials("marGie", "wewege"));
+console.log(generateInitials("Paddy", "O'Brien"));
 
-console.log(capitalize("brian is great"));
 
-console.log(capitalize(" we're out of time"));
-
-console.log(capitalize(" i need this to work"));
