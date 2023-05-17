@@ -16,6 +16,7 @@ describe("capitalize", () => {
     expect(capitalize("hello")).toBe("Hello");
     expect(capitalize("the quick fox")).toBe("The quick fox");
     expect(capitalize("oh no, bears!!!")).toBe("Oh no, bears!!!");
+    expect(capitalize(" why a space")).toBe("Why a space");
   });
 
   test("does nothing if the string is already capitalized", () => {
@@ -29,7 +30,7 @@ describe("generateInitials", () => {
   });
 });
 
-xdescribe("addVAT", () => {
+describe("addVAT", () => {
   test("adds a VAT of 20% to a price of 100", () => {
     expect(addVAT(100, 20)).toBe(120);
   });
@@ -47,7 +48,7 @@ xdescribe("addVAT", () => {
   });
 });
 
-xdescribe("getSalePrice", () => {
+describe("getSalePrice", () => {
   test("reduces a price of 100 by 50%", () => {
     expect(getSalePrice(100, 50)).toBe(50);
   });
@@ -65,7 +66,7 @@ xdescribe("getSalePrice", () => {
   });
 });
 
-xdescribe("getMiddleCharacter", () => {
+describe("getMiddleCharacter", () => {
   test("returns the middle character from a string of odd length", () => {
     expect(getMiddleCharacter("bears!!!!")).toBe("s");
   });
