@@ -5,123 +5,111 @@
 // Note: Be sure to read the corresponding .md file for each exercise, in the docs folder. 📘 👍
 
 export function capitalize(word) {
-	if (word === undefined) throw new Error('word is required');
-	
-    const trimSpaces = word.trim();
- 	const capitalised = trimSpaces.charAt(0).toUpperCase() + trimSpaces.slice(1)
+  if (word === undefined) throw new Error("word is required");
 
- 	return(capitalised)
+  const trimSpaces = word.trim();
+  const capitalised = trimSpaces.charAt(0).toUpperCase() + trimSpaces.slice(1);
 
+  return capitalised;
 }
 
 export function generateInitials(firstName, lastName) {
-	if (firstName === undefined) throw new Error('firstName is required');
-	if (lastName === undefined) throw new Error('lastName is required');
-			
-	const initials = firstName.trim().charAt(0).toUpperCase() + "." + lastName.trim().charAt(0).toUpperCase()
-	
-	return(initials)
+  if (firstName === undefined) throw new Error("firstName is required");
+  if (lastName === undefined) throw new Error("lastName is required");
 
+  const initials =
+    firstName.trim().charAt(0).toUpperCase() +
+    "." +
+    lastName.trim().charAt(0).toUpperCase();
+
+  return initials;
 }
 
 export function addVAT(originalPrice, vatRate) {
-	if (originalPrice === undefined)
-		throw new Error('originalPrice is requied');
-	if (vatRate === undefined) throw new Error('vatRate is required');
-		
-	const vatIncluded = parseFloat((originalPrice * (1+vatRate / 100)).toFixed(2));
+  if (originalPrice === undefined) throw new Error("originalPrice is requied");
+  if (vatRate === undefined) throw new Error("vatRate is required");
 
-    return(vatIncluded)
+  const vatIncluded = parseFloat(
+    (originalPrice * (1 + vatRate / 100)).toFixed(2)
+  );
+
+  return vatIncluded;
 }
 
 export function getSalePrice(originalPrice, reduction) {
-	if (originalPrice === undefined)
-		throw new Error('originalPrice is required');
-	if (reduction === undefined) throw new Error('reduction is required');
-	
-	const reducedPrice = parseFloat((originalPrice - (originalPrice * (reduction/100))).toFixed(2));
+  if (originalPrice === undefined) throw new Error("originalPrice is required");
+  if (reduction === undefined) throw new Error("reduction is required");
 
-    return(reducedPrice)
+  const reducedPrice = parseFloat(
+    (originalPrice - originalPrice * (reduction / 100)).toFixed(2)
+  );
 
+  return reducedPrice;
 }
 
 export function getMiddleCharacter(str) {
-	if (str === undefined) throw new Error('str is required');
-	
-	const strRemain = str.length % 2;
-	const start = Math.ceil(str.length / 2) - 1;
-	const len = strRemain === 0 ? 2 : 1;
- 
-	return(str.substr(start,len));
-	
+  if (str === undefined) throw new Error("str is required");
+
+  const strRemain = str.length % 2;
+  const start = Math.ceil(str.length / 2) - 1;
+  const len = strRemain === 0 ? 2 : 1;
+
+  return str.substr(start, len);
 }
 
 export function reverseWord(word) {
-	if (word === undefined) throw new Error('word is required');
-	
-	const reverseWord = word.split("").reverse().join("")
+  if (word === undefined) throw new Error("word is required");
 
-	return(reverseWord);
+  const reverseWord = word.split("").reverse().join("");
 
+  return reverseWord;
 }
 
 export function reverseAllWords(words) {
-	if (words === undefined) throw new Error('words is required');
+  if (words === undefined) throw new Error("words is required");
 
-	for (let i = 0; i < words.length; i++) {
-		words[i] = words[i].split("").reverse().join("");
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].split("").reverse().join("");
+  }
 
-	}
-
-return(words);
-
+  return words;
 }
 
 export function countLinuxUsers(users) {
-	if (users === undefined) throw new Error('users is required');
-	
-	let countLinux = 0
+  if (users === undefined) throw new Error("users is required");
 
-	for (let i = 0; i < users.length; i++) {
-		if (users[i].type === "Linux") {
-			countLinux++;
-		};
+  let countLinux = 0;
 
-	};
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].type === "Linux") {
+      countLinux++;
+    }
+  }
 
-	return(countLinux);
-
+  return countLinux;
 }
 
 export function getMeanScore(scores) {
-	if (scores === undefined) throw new Error('scores is required');
+  if (scores === undefined) throw new Error("scores is required");
 
-	const average = scores.reduce((a, c) => a + c, 0) / scores.length;
+  const average = scores.reduce((a, c) => a + c, 0) / scores.length;
 
-	return(parseFloat(average.toFixed(2)));
-	
+  return parseFloat(average.toFixed(2));
 }
 
 export function simpleFizzBuzz(n) {
-	if (n === undefined) throw new Error('n is required');
-	
-	const three = n % 3;
-	const five = n % 5;
+  if (n === undefined) throw new Error("n is required");
 
-	if (three === 0 && five === 0) {
-		const message = "fizzbuzz";
-		return(message);
+  const three = n % 3;
+  const five = n % 5;
 
-	} else if (three === 0) {
-		const message = "fizz";
-		return(message);
-		
-	} else if (five === 0) {
-		const message = "buzz";
-		return(message);
-
-	} else {
-		return(n);
-
-	};
+  if (three === 0 && five === 0) {
+    return "fizzbuzz";
+  } else if (three === 0) {
+    return "fizz";
+  } else if (five === 0) {
+    return "buzz";
+  } else {
+    return n;
+  }
 }
