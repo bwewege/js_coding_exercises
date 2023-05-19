@@ -1,43 +1,27 @@
 
+const n = 7// fizz
+//const n = 5; // buzz
+//const n = 4; // 4
+//const n = 15; //fizzbuzz
 
-function getMiddleCharacter(str) {
-    if (str === undefined) throw new Error('str is required');
-    //Add your code here!
+const three = n % 3;
+const five = n % 5;
 
-   const strRemain = str.length % 2
+if (three === 0 && five === 0) {
+    const message = "fizzbuzz";
+    return(message);
 
-   if (strRemain === 0) {
-        const strMiddle1 = (str.length / 2) - 1; 
-        const strMiddle2 = strMiddle1 + 1;
-        return(str.charAt(strMiddle1) + str.charAt(strMiddle2));
-   } else {
-        const strMiddle = str.length / 2;
-        return(str.charAt(strMiddle))
-           
-   }
- 
-}
+} else if (three === 0) {
+    const message = "fizz";
+    return(message);
+    
+} else if (five === 0) {
+    const message = "buzz";
+    return(message);
 
-function getMiddleCharacter2(str) {
-    if (str === undefined) throw new Error('str is required');
-    //Add your code here!
+} else {
+    return(n);
 
-   const strRemain = str.length % 2;
-   const start = Math.ceil(str.length / 2) - 1;
-   const len = strRemain === 0 ? 2 : 1;
-
-   console.log(str + ":" + str.length + " " + start + " " + len);
-   return(str.substr(start,len));
-}
-
-
- //console.log(getMiddleCharacter("bears!!!!"));
- //console.log(getMiddleCharacter("help!!"));
- console.log(getMiddleCharacter2("bears!!!!"));
- console.log(getMiddleCharacter2("help!!"));
-
-
- const a = parseFloat("1.2");
- console.log(a);
+};
 
 

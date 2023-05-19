@@ -58,25 +58,70 @@ export function getMiddleCharacter(str) {
 
 export function reverseWord(word) {
 	if (word === undefined) throw new Error('word is required');
-	// Add your code here!
+	
+	const reverseWord = word.split("").reverse().join("")
+
+	return(reverseWord);
+
 }
 
 export function reverseAllWords(words) {
 	if (words === undefined) throw new Error('words is required');
-	// Add your code here!
+
+	for (let i = 0; i < words.length; i++) {
+		words[i] = words[i].split("").reverse().join("");
+
+	}
+
+return(words);
+
 }
 
 export function countLinuxUsers(users) {
 	if (users === undefined) throw new Error('users is required');
-	// Add your code here!
+	
+	let countLinux = 0
+
+	for (let i = 0; i < users.length; i++) {
+		if (users[i].type === "Linux") {
+			countLinux++;
+		};
+
+	};
+
+	return(countLinux);
+
 }
 
 export function getMeanScore(scores) {
 	if (scores === undefined) throw new Error('scores is required');
-	// Add your code here!
+
+	const average = scores.reduce((a, c) => a + c, 0) / scores.length;
+
+	return(parseFloat(average.toFixed(2)));
+	
 }
 
 export function simpleFizzBuzz(n) {
 	if (n === undefined) throw new Error('n is required');
-	// Add your code here!
+	
+	const three = n % 3;
+	const five = n % 5;
+
+	if (three === 0 && five === 0) {
+		const message = "fizzbuzz";
+		return(message);
+
+	} else if (three === 0) {
+		const message = "fizz";
+		return(message);
+		
+	} else if (five === 0) {
+		const message = "buzz";
+		return(message);
+
+	} else {
+		return(n);
+
+	};
 }
