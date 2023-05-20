@@ -1,19 +1,20 @@
-// duplicateNumbers(arr1, arr2);
-// "returns an array of numbers which appear in both arr1 and arr2"
-//let arr1 = [1, 55, 4, 3, 7, 8];
-//let arr2 = [55, 23, 65, 0];
-// "returns the duplicate numbers in ascending order"
-//let arr1 = [1, 55, 4, 3, 7, 8];
-//let arr2 = [55, 23, 65, 0, 1];
-// "returns each number only once, even if it appears in one array multiple times"
-let arr1 = [1, 7, 2, 2, 2, 3, 4, 5];
-let arr2 = [1, 2, 6, 7];
+const sentences = [
+  "You should specify a license for your package so that people know how they are permitted to use it",
+  "The main field is a module ID that is the primary entry point to your program",
+  "The repository field should specify the place where your code lives",
+  "The 'scripts' property is a dictionary containing script commands that are run at various times in the lifecycle of your package",
+  "Dependencies are specified in a simple object that maps a package name to a version range",
+  "It's best to map these additional items such as a test framework, which is not needed for running your project, in a devDependencies object",
+  "If you plan to publish your package, the most important things in your package.json are the name and version fields as they will be required",
+  "If you don’t plan to publish your package, the name and version fields are optional",
+  "Put keywords in it. It's an array of strings. This helps people discover your package as it's listed in npm search",
+  "The bugs field should hold the url to your project’s issue tracker and / or the email address to which issues should be reported.",
+];
 
-const intersection = [...new Set(arr1.filter((x) => arr2.includes(x)))];
-// Note for self: The arrow function inside the filter() method runs the includes() method against each item arr1
-//                for each element 'x' in arr1 the arrow func checks if it is included arr2.
-//                if x is found the element is kept in the resultset.
-//                'Set' then wraps the whole thing and removes duplicats
-//                ...new converts the 'Set' object into an array.
+const str = "Repository";
 
-console.log(intersection.sort());
+const sentencesWithStr = sentences.filter((a) =>
+  a.toLowerCase().includes(str.toLowerCase())
+);
+
+console.log(sentencesWithStr);
