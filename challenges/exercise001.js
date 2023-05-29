@@ -81,14 +81,14 @@ export function getMeanScore(scores) {
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
 
-  const three = n % 3;
-  const five = n % 5;
+  const remainderOfTHree = n % 3;
+  const remainderOfFive = n % 5;
 
-  if (three === 0 && five === 0) {
+  if (remainderOfTHree === 0 && remainderOfFive === 0) {
     return "fizzbuzz";
-  } else if (three === 0) {
+  } else if (remainderOfTHree === 0) {
     return "fizz";
-  } else if (five === 0) {
+  } else if (remainderOfFive === 0) {
     return "buzz";
   } else {
     return n;
