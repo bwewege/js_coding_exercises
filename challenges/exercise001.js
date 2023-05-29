@@ -14,12 +14,11 @@ export function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
 
-  const initials =
+  return (
     firstName.trim().charAt(0).toUpperCase() +
     "." +
-    lastName.trim().charAt(0).toUpperCase();
-
-  return initials;
+    lastName.trim().charAt(0).toUpperCase()
+  );
 }
 
 export function addVAT(originalPrice, vatRate) {
