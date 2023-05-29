@@ -7,10 +7,7 @@
 export function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
 
-  const trimSpaces = word.trim();
-  const capitalised = trimSpaces.charAt(0).toUpperCase() + trimSpaces.slice(1);
-
-  return capitalised;
+  return word.trim().charAt(0).toUpperCase() + word.trim().slice(1);
 }
 
 export function generateInitials(firstName, lastName) {
