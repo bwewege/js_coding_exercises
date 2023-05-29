@@ -72,7 +72,8 @@ export function countLinuxUsers(users) {
 export function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
 
-  const average = scores.reduce((a, c) => a + c, 0) / scores.length;
+  const average =
+    scores.reduce((total, score) => total + score) / scores.length;
 
   return parseFloat(average.toFixed(2));
 }
