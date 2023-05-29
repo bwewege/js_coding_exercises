@@ -25,11 +25,7 @@ export function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
 
-  const vatIncluded = parseFloat(
-    (originalPrice * (1 + vatRate / 100)).toFixed(2)
-  );
-
-  return vatIncluded;
+  return parseFloat((originalPrice * (1 + vatRate / 100)).toFixed(2));
 }
 
 export function getSalePrice(originalPrice, reduction) {
