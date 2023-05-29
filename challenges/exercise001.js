@@ -43,10 +43,8 @@ export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
 
   const strRemain = str.length % 2;
-  const start = Math.ceil(str.length / 2) - 1;
-  const len = strRemain === 0 ? 2 : 1;
 
-  return str.substr(start, len);
+  return str.substr(Math.ceil(str.length / 2) - 1, strRemain === 0 ? 2 : 1);
 }
 
 export function reverseWord(word) {
